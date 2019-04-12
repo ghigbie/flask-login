@@ -1,8 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Home Page</h1>
-{% with message = get_flasjed_messages() %}
+
+{% if current_user.is_authenticated %}
+<p>Welcome {{ current_user.username }}</p>
+{% else %}
+<p>Please 
+    <a href="{ url_for(login) }">login</a> or
+    <a href="{ url_for(register) }"></a>
+ </p>
+{% endif %}
+
+{% with message = get_flashed_messages() %}
     {% if message %}
         {% for message in messages %}
             <p>{{ message }}</p>
