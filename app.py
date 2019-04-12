@@ -49,7 +49,7 @@ def register():
         db.session.commit()
         flash("Thanks for registration!")
         return redirect(url_for('login'))
-    return render_template('register.html', form=form)
+    return render_template('home.html', form=form)
 
 if __name__ == '__main__':
     app.run(debug=True)
