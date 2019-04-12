@@ -15,3 +15,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 Migrate(app, db)
+
+login_manager.init_app(app)
+login_manager.login_view = 'login'
