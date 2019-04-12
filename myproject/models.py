@@ -8,7 +8,7 @@ def load_user(user_id):
 
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
-    id = db.Column(db.Interger, primary_key= True)
+    id = db.Column(db.Integer, primary_key= True)
     first_name = db.Column(db.String(64))
     last_name = db.Column(db.String(64))
     email = db.Column(db.String(64), unique=True, index=True)
