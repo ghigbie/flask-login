@@ -2,4 +2,11 @@
 
 {% block content %}
 <h1>Home Page</h1>
+{% with message = get_flasjed_messages() %}
+    {% if message %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
 {% endblock%}
