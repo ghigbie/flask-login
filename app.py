@@ -21,3 +21,13 @@ def logout():
     logout_user()
     flash("You are now securely logged out. Thank you for visiting!")
     return redirect(url_for('home'))
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        if user.check_password(form.password.data) and user is not none:
+            login_user(user)
+            flash('Logged in Successfully!')
+            next = request.args.get('next')
