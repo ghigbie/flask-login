@@ -5,8 +5,8 @@ from myproject.models import User
 from myproject.forms import LoginForm, RegistrationForm
 
 
-@app.route('/')
 @app.route('/index')
+@app.route('/')
 def home():
     return render_template('home.html')
 
@@ -48,7 +48,7 @@ def register():
         db.session.add(user)
         db.session.commit()
         flash("Thanks for registering!")
-        return redirect(url_for('home'))
+        return redirect(url_for('login'))
     return render_template('register.html', form=form)
 
 if __name__ == '__main__':
