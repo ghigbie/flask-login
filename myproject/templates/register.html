@@ -1,0 +1,12 @@
+{% extednds 'base.html' %}
+{% block content %}
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.first_name.label }} {{ form.first_name() }} <br>
+    {{ form.last_name.label }} {{ form.last_name() }} <br>
+    {{ form.email.label }} {{ form.email() }} <br>
+    {{ form.email_confirm.label }} {{ form.email_confirm() }} <br>
+    {{ form.password.label }} {{ form.password() }} <br>
+    {{ form.password_confirm.label }} {{ form.password_confirm() }} <br>
+</form>
+{% endblock %}
