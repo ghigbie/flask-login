@@ -7,3 +7,7 @@ To test the application run:
 ```
 export FLASK_APP=app.py
 ```
+Then run:
+```
+flask run
+```
