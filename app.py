@@ -31,3 +31,7 @@ def login():
             login_user(user)
             flash('Logged in Successfully!')
             next = request.args.get('next')
+            if next == None or not next[0] == '/':
+                next = url_for('welcome_user')
+            return redirect(next)
+        return render_template('login.html', form=form)
